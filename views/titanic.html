@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Titanic Web</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="../images/cruise.png" alt="banner titanic" />
+      <h1>Bienvenidos a Titanic Web</h1>
+    </header>
+
+    <main>
+      <section class="contentForm">
+        <form action="" method="post" id="titanicForm">
+          <div class="wrapper">
+            <label for="passengerId">Passenger ID</label>
+            <input
+              type="text"
+              name="passengerId"
+              id="passengerId"
+              value="0"
+              required
+            />
+          </div>
+          <div class="wrapper">
+            <label for="survived">Suvirved</label>
+            <input type="text" name="survived" id="survived" required />
+          </div>
+          <div class="wrapper">
+            <label for="pClass">PClass</label>
+            <input type="text" name="pClass" id="pClass" required />
+          </div>
+          <div class="wrapper">
+            <label for="nameUser">Name Passenger</label>
+            <input type="text" name="nameUser" id="nameUser" required />
+          </div>
+          <div class="wrapper">
+            <label for="sex">Sex</label>
+            <input type="text" name="sex" id="sex" required />
+          </div>
+          <div class="wrapper">
+            <label for="age">Age</label>
+            <input type="text" name="age" id="age" required />
+          </div>
+          <div class="wrapper">
+            <label for="sibsp">SibSp</label>
+            <input type="text" name="sibsp" id="sibsp" required />
+          </div>
+          <div class="wrapper">
+            <label for="parch">Parch</label>
+            <input type="text" name="parch" id="parch" required />
+          </div>
+          <div class="wrapper">
+            <label for="ticket">Ticket</label>
+            <input type="text" name="ticket" id="ticket" value="0" required />
+          </div>
+          <div class="wrapper">
+            <label for="fare">Fare</label>
+            <input type="text" name="fare" id="fare" required />
+          </div>
+          <div class="wrapper">
+            <label for="cabin">Cabin</label>
+            <input type="text" name="cabin" id="cabin" required />
+          </div>
+          <div class="wrapper">
+            <label for="embarked">Embarked</label>
+            <input type="text" name="embarked" id="embarked" required />
+          </div>
+          <div class="wrapper-btn">
+            <input type="submit" value="Evaluar" required />
+          </div>
+        </form>
+      </section>
+
+      <section id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>Survived</th>
+              <th>PClass</th>
+              <th>Sex</th>
+              <th>Age</th>
+              <th>SibSp</th>
+              <th>Parch</th>
+              <th>Fare</th>
+              <th>Embarked</th>
+              <th>Scored L.</th>
+              <th>Scored P.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="tr-results"></tr>
+          </tbody>
+        </table>
+
+        <p class="image">
+          <img
+            src="../images/viajeros.png"
+            alt="estado del pasajero"
+            id="imageState"
+            width=""
+          />
+        </p>
+      </section>
+    </main>
+
+    <script src="../script/app.js"></script>
+  </body>
+</html>
