@@ -51,7 +51,8 @@ main {
   padding: 0 1em;
 }
 
-#titanicForm {
+#titanicForm,
+#carsForm {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
