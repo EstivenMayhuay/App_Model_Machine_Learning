@@ -13,7 +13,7 @@ body {
   position: relative;
   display: block;
   max-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .header {
@@ -51,6 +51,7 @@ main {
 #bodyHome {
   display: flex;
   flex-flow: column;
+  justify-content: center;
   row-gap: 2em;
   background: var(--color-primary);
   min-height: 100vh;
