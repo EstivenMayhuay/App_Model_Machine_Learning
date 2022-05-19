@@ -31,8 +31,10 @@ if (document.getElementById("titanicForm") != null) {
     const formData = new FormData($formTitanic);
     const data = Object.fromEntries(formData);
 
+    console.log(data);
+
     // Fetching the data of the form with the method POST
-    fetch("http://localhost:3000/titanic", {
+    fetch("https://emcodyapiml.herokuapp.com/titanic", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -53,7 +55,9 @@ if (document.getElementById("carsForm") != null) {
     const formData = new FormData($formCars);
     const data = Object.fromEntries(formData);
 
-    fetch("http://localhost:3000/cars", {
+    console.log(data);
+
+    fetch("https://emcodyapiml.herokuapp.com/cars", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
