@@ -1,21 +1,28 @@
 const $formTitanic = document.getElementById("titanicForm");
 const $formCars = document.getElementById("carsForm");
-const server = "http://localhost:3000/titanic";
 
-const renderDataSurvived = (data) => {
-  const $rowResult = document.getElementById("tr-titanic");
+const renderDataSurvived = (data, elem, label) => {
+  const $rowResult = document.querySelector(elem);
   const $imgState = document.getElementById("imageState");
 
   $rowResult.innerHTML = "";
 
   for (let key in data) {
-    console.log(data[key]);
+    if (key == "scoreLabel") {
+      data[key] = Number(data[key]).toFixed(2);
+    }
     $rowResult.innerHTML += `<td>${data[key]}</td>`;
   }
 
-  data.scoreProbability > 0.5
-    ? ($imgState.src = "../images/survived.png")
-    : ($imgState.src = "../images/dead.png");
+  if (label == "titanic") {
+    data.scoreProbability > 0.5
+      ? ($imgState.src = "../images/survived.png")
+      : ($imgState.src = "../images/dead.png");
+  } else if (label == "cars") {
+    Number(data.scoreLabel) > Number(data.price)
+      ? ($imgState.src = "../images/increase.png")
+      : ($imgState.src = "../images/decrease.png");
+  }
 };
 
 if (document.getElementById("titanicForm") != null) {
@@ -34,7 +41,7 @@ if (document.getElementById("titanicForm") != null) {
     })
       .then((res) => res.json())
       .then((data) => {
-        renderDataSurvived(data);
+        renderDataSurvived(data, "#tr-titanic", "titanic");
       });
   });
 }
@@ -46,8 +53,6 @@ if (document.getElementById("carsForm") != null) {
     const formData = new FormData($formCars);
     const data = Object.fromEntries(formData);
 
-    console.log(data);
-
     fetch("http://localhost:3000/cars", {
       method: "POST",
       body: JSON.stringify(data),
@@ -57,7 +62,7 @@ if (document.getElementById("carsForm") != null) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        renderDataSurvived(data, "#tr-cars", "cars");
       });
   });
 }
