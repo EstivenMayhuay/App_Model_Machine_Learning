@@ -11,6 +11,6 @@ Now, In this app, you will find examples of predictive models apply **machine le
 - CSS3
 - JavaScript
 
-## **Views**
+## **View**
 
 > **Home** ![view home](./images/view_home.png) **Titanic** ![view titanic](./images/view_titanic.png) **Cars** ![view cars](./images/view_cars.png)
