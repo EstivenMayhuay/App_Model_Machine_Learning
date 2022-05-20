@@ -6,10 +6,10 @@ Now, In this app, you will find examples of predictive models apply **machine le
 
 ## **Technologies**
 
-- Azure Machine Learning Studio
 - HTML5
 - CSS3
 - JavaScript
+- [API Machine Learning](https://github.com/EstivenMayhuay/API_Azure_Machine_Learning)
 
 ## **View**
 
