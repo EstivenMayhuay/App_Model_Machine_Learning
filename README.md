@@ -20,3 +20,11 @@ Now, In this app, you will find examples of predictive models apply **machine le
 **Home**
 
 ![View Home](./images/view_home.png)
+
+**Titanic**
+
+![View Titanic](./images/view_titanic.png)
+
+**Cars**
+
+![View Cars](./images/view_cars.png)
