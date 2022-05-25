@@ -4,24 +4,75 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Titanic Web</title>
+    <meta
+      name="description"
+      content="This app can help you to predict if you can survived to the titanic crash"
+    />
+    <meta name="keywords" content="Machine Learning, Vanilla JS, Titanic" />
+    <meta name="author" content="Estiven Mayhuay" />
+    <title>Titanic Web - EMCODY</title>
     <link
       rel="shortcut icon"
       href="../images/icon-azure.png"
       type="image/png"
     />
     <link rel="stylesheet" href="../css/main.css" />
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
-      <h1>Welcome to Titanic Web</h1>
+      <h1>Titanic Web</h1>
     </header>
 
     <a href="../index.html" class="iconHome"
       ><img src="../images/icon-home.png" alt="icono para ir al home"
     /></a>
 
-    <main>
+    <main class="main">
+      <section class="intro">
+        <h2 class="title">What you can do?</h2>
+        <p class="paragraph">
+          You can predict whether or not you survived the Titanic crash. Just
+          put the data and now we explain the fields that we require.
+        </p>
+        <ul class="list">
+          <li class="list__item">
+            <strong>Suvirved:</strong> The value you can put is Yes or Not
+          </li>
+          <li class="list__item">
+            <strong>PClass:</strong> Is the class type of the passenger
+          </li>
+          <li class="list__item">
+            <strong>Name Passenger:</strong> Put your name
+          </li>
+          <li class="list__item">
+            <strong>Sex:</strong>The  value is Male & Female
+          </li>
+          <li class="list__item"><strong>Age:</strong>Your age</li>
+          <li class="list__item">
+            <strong>SibSp:</strong> Values range form 1 to 8
+          </li>
+          <li class="list__item">
+            <strong>Parch:</strong> Values range form 1 to 5
+          </li>
+          <li class="list__item">
+            <strong>Parch:</strong> Is the price of the ticket you can put a
+            random value
+          </li class="list__item">
+          <li class="list__item"><strong>Embarked:</strong> The value is S, C & Q</li>
+        </ul>
+      </section>
+
       <section class="contentForm">
         <form action="" method="post" id="titanicForm">
           <div class="wrapper hiden">
@@ -38,8 +89,8 @@
             <label for="survived">Suvirved</label>
             <select name="survived" id="survived" required>
               <option value="" hidden></option>
-              <option value="0">No</option>
-              <option value="1">Si</option>
+              <option value="0">Not</option>
+              <option value="1">Yes</option>
             </select>
             <!-- <input type="text" name="survived" id="survived" required /> -->
           </div>
@@ -128,26 +179,7 @@
       </section>
 
       <section id="results">
-        <span id="btnCloseModal">X</span>
-        <table>
-          <thead>
-            <tr>
-              <th>Survived</th>
-              <th>PClass</th>
-              <th>Sex</th>
-              <th>Age</th>
-              <th>SibSp</th>
-              <th>Parch</th>
-              <th>Fare</th>
-              <th>Embarked</th>
-              <th>Scored L.</th>
-              <th>Scored P.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr id="tr-titanic"></tr>
-          </tbody>
-        </table>
+        <span id="btnCloseModal"><i class='bx bx-exit'></i></span>
 
         <p class="image">
           <img
@@ -157,9 +189,48 @@
             width=""
           />
         </p>
+
+        <p class="paragraph paragraph--result" id="paragraphResult"></p>
+
+        <div class="contentTableTitanic">
+          <table id="tableTitanic">
+            <thead>
+              <tr>
+                <th>Survived</th>
+                <th>PClass</th>
+                <th>Sex</th>
+                <th>Age</th>
+                <th>SibSp</th>
+                <th>Parch</th>
+                <th>Fare</th>
+                <th>Embarked</th>
+                <th>Scored L.</th>
+                <th>Scored P.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="tr-titanic"></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="socialMedia">
+        <button class="btn">
+          <i class='bx bxl-youtube'></i> 
+          <a href="https://www.youtube.com/channel/UCKmXlegNzxRIhWz1vP1YuZw" target="_blank">Youtube</a>
+        </button>
+        <button class="btn">
+          <i class='bx bxl-discord-alt' ></i> 
+          <a href="https://discord.gg/CrKTjZSe" target="_blank">Discord</a>
+        </button>
+        <button class="btn">
+          <i class='bx bxl-blogger' ></i> 
+          <a href="https://estivenmayhuay.github.io/emcody/" target="_blank">Blog</a>
+        </button>
       </section>
     </main>
 
-    <script src="../script/app.js"></script>
+    <script src="../script/app.js" type="module"></script>
   </body>
 </html>

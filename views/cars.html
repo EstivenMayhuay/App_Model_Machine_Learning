@@ -4,24 +4,74 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cars Web</title>
+    <meta
+      name="description"
+      content="This app can help you to predict the real price of car"
+    />
+    <meta name="keywords" content="Machine Learning, Vanilla JS, Cars" />
+    <meta name="author" content="Estiven Mayhuay" />
+    <title>Cars Web - EMCODY</title>
     <link
       rel="shortcut icon"
       href="../images/icon-azure.png"
       type="image/png"
     />
     <link rel="stylesheet" href="../css/main.css" />
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
-      <h1>Welcome to Cars Web</h1>
+      <h1>Cars Web</h1>
     </header>
 
     <a href="../index.html" class="iconHome"
       ><img src="../images/icon-home.png" alt="icono para ir al home"
     /></a>
 
-    <main>
+    <main class="main">
+      <section class="intro">
+        <h2 class="title">What you can do?</h2>
+        <p class="paragraph">
+          You can predict the real price of your car. Just put the data and now
+          we explain the fields that we require.
+        </p>
+        <ul class="list">
+          <li class="list__item">
+            <strong>Make:</strong> Is the mark of the car
+          </li>
+          <li class="list__item">
+            <strong>Body Style:</strong> Is the body style of the car
+          </li>
+          <li class="list__item">
+            <strong>Wheel Base:</strong> Is the wheel base of the car
+          </li>
+          <li class="list__item">
+            <strong>Engine Size:</strong> Is the engine size of the car
+          </li>
+          <li class="list__item"><strong>Age:</strong> Your age</li>
+          <li class="list__item">
+            <strong>Horsepower:</strong> Is the horsepower of the car
+          </li>
+          <li class="list__item">
+            <strong>Peark rpm:</strong> Is the revolution pear minutes of the car
+          </li>
+          <li class="list__item">
+            <strong>Highway mpg </strong> Is the highway miles per gallon
+          </li class="list__item">
+          <li class="list__item"><strong>Price:</strong> Put the real price of your car</li>
+        </ul>
+      </section>
+
       <section class="contentForm">
         <form action="" method="post" id="carsForm">
           <div class="wrapper hiden">
@@ -225,26 +275,7 @@
       </section>
 
       <section id="results">
-        <span id="btnCloseModal">X</span>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Make</th>
-              <th>Body style</th>
-              <th>wheel base</th>
-              <th>Engine size</th>
-              <th>Horsepower</th>
-              <th>Peak rpm</th>
-              <th>Highway mpg</th>
-              <th>Price</th>
-              <th>Scored Labels</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr id="tr-cars"></tr>
-          </tbody>
-        </table>
+        <span id="btnCloseModal"><i class='bx bx-exit'></i></span>
 
         <p class="image">
           <img
@@ -254,9 +285,32 @@
             width=""
           />
         </p>
+
+        <p class="paragraph paragraph--result" id="paragraphResult"></p>
+
+        <div class="contentTableCars">
+          <table>
+            <thead>
+              <tr>
+                <th>Make</th>
+                <th>Body style</th>
+                <th>wheel base</th>
+                <th>Engine size</th>
+                <th>Horsepower</th>
+                <th>Peak rpm</th>
+                <th>Highway mpg</th>
+                <th>Price</th>
+                <th>Scored Labels</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="tr-cars"></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 
-    <script src="../script/app.js"></script>
+    <script src="../script/app.js" type="module"></script>
   </body>
 </html>
