@@ -238,6 +238,7 @@ select option {
   overflow-x: scroll;
   transform: translate(0, -100%);
   background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
 }
 
 #btnCloseModal {
@@ -303,7 +304,8 @@ td {
   }
 
   /* Form */
-  #titanicForm {
+  #titanicForm,
+  #carsForm {
     display: flex;
     flex-flow: row wrap;
     width: calc(var(--wForm) * 2);
