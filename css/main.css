@@ -6,45 +6,44 @@
 
 :root {
   --color-primary: #88139b;
+  --white-grayish: #eee;
+  --white: #fff;
+  --black: #404040;
+
   --wLogo: 64px;
+  --wForm: 290px;
 }
 
 body {
   position: relative;
   display: block;
   max-width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  background: var(--white-grayish);
 }
 
 .header {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row;
   align-items: center;
   justify-content: center;
-  column-gap: 1em;
   width: 100%;
   height: 90px;
   padding: 5px;
   background-color: var(--color-primary);
-  margin-bottom: 2em;
 }
 
 .header h1 {
   font-size: 1.5em;
-  color: #fff;
+  color: var(--white);
   font-family: "Verdana", sans-serif;
-}
-
-.header img {
-  display: block;
-  width: var(--wLogo);
-  height: var(--wLogo);
 }
 
 main {
   display: flex;
   flex-flow: column;
   row-gap: 2em;
+  padding: 1em 0;
 }
 
 /* Home */
@@ -58,10 +57,8 @@ main {
 }
 
 #title {
-  color: #fff;
+  color: var(--white);
   text-align: center;
-  width: 80%;
-  margin: 0 auto;
   padding: 10px;
   font-size: 2.5em;
   font-family: "Verdana", sans-serif;
@@ -108,7 +105,7 @@ main {
 
 .card__title {
   font-family: "Verdana", sans-serif;
-  color: #404040;
+  color: var(--black);
   text-align: center;
   font-size: 1.65em;
 }
@@ -137,44 +134,55 @@ main {
 }
 
 /* Form */
-.contentForm {
-  padding: 0 1em;
-}
-
 #titanicForm,
 #carsForm {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   justify-content: center;
+  padding: 1em 0.5em;
   gap: 1.25em;
-  width: 90%;
+  width: var(--wForm);
   margin: 0 auto;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.25);
 }
 
 .wrapper {
   display: flex;
   flex-flow: column;
+  width: 100%;
   row-gap: 0.5em;
 }
 
 .wrapper label,
-.wrapper input {
+.wrapper input,
+.wrapper select {
   display: block;
   font-family: "Verdana", sans-serif;
 }
 
 .wrapper label {
-  color: #404040;
+  color: var(--black);
   font-weight: 700;
 }
 
-.wrapper input {
-  outline: 2px solid #404040;
+.wrapper input,
+.wrapper select {
+  outline: 2px solid var(--black);
   border: none;
   padding: 2.5px 5px;
   border-radius: 4px;
   font-size: 1em;
-  color: #404040;
+  color: var(--black);
+  background: var(--white);
+}
+
+select option {
+  color: var(--black);
+  font-size: 0.9em;
+  font-weight: 500;
+  padding: 5px;
 }
 
 .wrapper-btn {
@@ -199,6 +207,10 @@ main {
   cursor: pointer;
 }
 
+.hiden {
+  display: none;
+}
+
 .wrapper-btn input[type="submit"]:hover {
   filter: brightness(1.1);
   transition: filter 0.4s linear;
@@ -212,17 +224,35 @@ main {
 
 /* Tables */
 #results {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-flow: column;
   row-gap: 1em;
-  width: 80%;
-  padding: 10px;
+  width: 100%;
+  padding: 1em;
   margin: 0 auto;
   overflow-x: scroll;
+  transform: translate(0, -100%);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#btnCloseModal {
+  position: sticky;
+  top: 0;
+  right: 1em;
+  width: 28px;
+  height: 28px;
+  color: var(--white);
+  font-weight: 7000;
 }
 
 table {
-  border: 2px solid #404040;
+  border: 2px solid var(--black);
+  width: 50%;
   border-collapse: collapse;
 }
 
@@ -241,7 +271,7 @@ th {
 
 td {
   background: #eee;
-  color: #404040;
+  color: var(--black);
   font-weight: 600;
 }
 
@@ -267,6 +297,24 @@ td {
 }
 
 @media screen and (min-width: 768px) {
+  /* Home */
+  #title {
+    font-size: 3.5em;
+  }
+
+  /* Form */
+  #titanicForm {
+    display: flex;
+    flex-flow: row wrap;
+    width: calc(var(--wForm) * 2);
+  }
+
+  .wrapper {
+    flex: calc(100% / 2 - 1.25em);
+    max-width: calc(100% / 2 - 1.25em);
+  }
+
+  /* Tables */
   #results {
     overflow: hidden;
   }

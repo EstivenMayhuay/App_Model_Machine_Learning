@@ -14,7 +14,6 @@
   </head>
   <body>
     <header class="header">
-      <img src="../images/cruise.png" alt="banner titanic" />
       <h1>Welcome to Titanic Web</h1>
     </header>
 
@@ -25,7 +24,7 @@
     <main>
       <section class="contentForm">
         <form action="" method="post" id="titanicForm">
-          <div class="wrapper">
+          <div class="wrapper hiden">
             <label for="passengerId">Passenger ID</label>
             <input
               type="text"
@@ -37,11 +36,22 @@
           </div>
           <div class="wrapper">
             <label for="survived">Suvirved</label>
-            <input type="text" name="survived" id="survived" required />
+            <select name="survived" id="survived" required>
+              <option value="" hidden></option>
+              <option value="0">No</option>
+              <option value="1">Si</option>
+            </select>
+            <!-- <input type="text" name="survived" id="survived" required /> -->
           </div>
           <div class="wrapper">
             <label for="pClass">PClass</label>
-            <input type="text" name="pClass" id="pClass" required />
+            <select name="pClass" id="pClass" required>
+              <option value="" hidden></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <!-- <input type="text" name="pClass" id="pClass" required /> -->
           </div>
           <div class="wrapper">
             <label for="nameUser">Name Passenger</label>
@@ -49,7 +59,12 @@
           </div>
           <div class="wrapper">
             <label for="sex">Sex</label>
-            <input type="text" name="sex" id="sex" required />
+            <select name="sex" id="sex" required>
+              <option value="" hidden></option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <!-- <input type="text" name="sex" id="sex" required /> -->
           </div>
           <div class="wrapper">
             <label for="age">Age</label>
@@ -57,13 +72,34 @@
           </div>
           <div class="wrapper">
             <label for="sibsp">SibSp</label>
-            <input type="text" name="sibsp" id="sibsp" required />
+            <select name="sibsp" id="sibsp" required>
+              <option value="" hidden></option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+            <!-- <input type="text" name="sibsp" id="sibsp" required /> -->
           </div>
           <div class="wrapper">
             <label for="parch">Parch</label>
-            <input type="text" name="parch" id="parch" required />
+            <select name="parch" id="parch" required>
+              <option value="" hidden></option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <!-- <input type="text" name="parch" id="parch" required /> -->
           </div>
-          <div class="wrapper">
+          <div class="wrapper hiden">
             <label for="ticket">Ticket</label>
             <input type="text" name="ticket" id="ticket" value="0" required />
           </div>
@@ -71,13 +107,19 @@
             <label for="fare">Fare</label>
             <input type="text" name="fare" id="fare" required />
           </div>
-          <div class="wrapper">
+          <div class="wrapper hiden">
             <label for="cabin">Cabin</label>
             <input type="text" name="cabin" id="cabin" value="0" required />
           </div>
           <div class="wrapper">
             <label for="embarked">Embarked</label>
-            <input type="text" name="embarked" id="embarked" required />
+            <select name="embarked" id="embarked" required>
+              <option value="" hidden></option>
+              <option value="S">S</option>
+              <option value="C">C</option>
+              <option value="Q">Q</option>
+            </select>
+            <!-- <input type="text" name="embarked" id="embarked" required /> -->
           </div>
           <div class="wrapper-btn">
             <input type="submit" value="Evaluate" required />
@@ -86,6 +128,7 @@
       </section>
 
       <section id="results">
+        <span id="btnCloseModal">X</span>
         <table>
           <thead>
             <tr>

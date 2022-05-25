@@ -1,9 +1,12 @@
 const $formTitanic = document.getElementById("titanicForm");
 const $formCars = document.getElementById("carsForm");
+const $btnCloseModal = document.getElementById("btnCloseModal");
 
 const renderDataSurvived = (data, elem, label) => {
   const $rowResult = document.querySelector(elem);
   const $imgState = document.getElementById("imageState");
+  const $sectionResults =
+    document.querySelector(elem).parentElement.parentElement.parentElement;
 
   $rowResult.innerHTML = "";
 
@@ -23,6 +26,10 @@ const renderDataSurvived = (data, elem, label) => {
       ? ($imgState.src = "../images/increase.png")
       : ($imgState.src = "../images/decrease.png");
   }
+
+  // Open the modal
+  $sectionResults.style.transform = "translate(0, 0)";
+  $sectionResults.style.transition = "transform 0.4s ease";
 };
 
 if (document.getElementById("titanicForm") != null) {
@@ -57,6 +64,7 @@ if (document.getElementById("carsForm") != null) {
 
     console.log(data);
 
+    // Fetching the data of the form with the method POST
     fetch("https://emcodyapiml.herokuapp.com/cars", {
       method: "POST",
       body: JSON.stringify(data),
@@ -68,5 +76,15 @@ if (document.getElementById("carsForm") != null) {
       .then((data) => {
         renderDataSurvived(data, "#tr-cars", "cars");
       });
+  });
+}
+
+if (document.getElementById("btnCloseModal") != null) {
+  $btnCloseModal.addEventListener("click", (e) => {
+    const $modal = e.target.parentElement;
+
+    // Close the modal
+    $modal.style.transform = "translate(0, -100%)";
+    $modal.style.transition = "transform 0.4s ease";
   });
 }
