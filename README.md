@@ -52,6 +52,10 @@ Now, In this app, you will find examples of predictive models apply **machine le
 
 ![View Titanic](./images/view_titanic.png)
 
+![View Titanic Results](./images/view_titanic_result.png)
+
 **Cars**
 
 ![View Cars](./images/view_cars.png)
+
+![View Cars Results](./images/view_cars_result.png)
