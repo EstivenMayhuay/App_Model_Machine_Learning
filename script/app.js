@@ -18,7 +18,7 @@ d.addEventListener("DOMContentLoaded", () => {
     "Ayacucho",
     "Cajamarca",
     "Callao",
-    "Cusco",
+    "Cuzco",
     "Huancavelica",
     "Huanuco",
     "Ica",
@@ -66,13 +66,18 @@ d.addEventListener("DOMContentLoaded", () => {
         $selectProvincia.disabled = false;
         $selectProvincia.innerHTML = provincias.map((pro) => {
           if (pro.nombre == "") return '<option value="" hidden></option>';
-          return `<option value=${pro.nombre}>${pro.nombre}</option>`;
+          return `<option value="${pro.nombre}">${pro.nombre}</option>`;
         });
       });
   });
 
   $selectProvincia.addEventListener("change", (e) => {
-    let url = `http://localhost:3000/peru/provincia/${e.target.value.toLowerCase()}`;
+    let url = `http://localhost:3000/peru/provincia/${e.target.value
+      .toLowerCase()
+      .split(" ")
+      .join("&")}`;
+
+    console.log(url);
 
     fetch(url, {
       method: "POST",
@@ -91,7 +96,7 @@ d.addEventListener("DOMContentLoaded", () => {
         $selectDistrito.disabled = false;
         $selectDistrito.innerHTML = distritos.map((dis) => {
           if (dis.nombre == "") return '<option value="" hidden></option>';
-          return `<option value=${dis.nombre}>${dis.nombre}</option>`;
+          return `<option value="${dis.nombre}">${dis.nombre}</option>`;
         });
       });
   });
