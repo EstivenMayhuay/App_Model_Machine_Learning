@@ -74,4 +74,8 @@ const formCars = (elem) => {
     });
 };
 
-export { formTitanic, formCars };
+const formCovid = (elem) => {
+  console.log(elem);
+};
+
+export { formTitanic, formCars, formCovid };

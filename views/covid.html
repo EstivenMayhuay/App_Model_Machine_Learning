@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This app can help you to predict the real price of car"
+    />
+    <meta name="keywords" content="Machine Learning, Vanilla JS, Cars" />
+    <meta name="author" content="Estiven Mayhuay" />
+    <title>Covid Web - EMCODY</title>
+    <link
+      rel="shortcut icon"
+      href="../images/icon-azure.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Cars Web</h1>
+    </header>
+
+    <a href="../index.html" class="iconHome"
+      ><img src="../images/icon-home.png" alt="icono para ir al home"
+    /></a>
+
+    <main class="main">
+      <section class="intro">
+        <h2 class="title">What you can do?</h2>
+        <p class="paragraph">
+          You can predict the real price of your car. Just put the data and now
+          we explain the fields that we require.
+        </p>
+        <ul class="list">
+          <li class="list__item">
+            <strong>Make:</strong> Is the mark of the car
+          </li>
+          <li class="list__item">
+            <strong>Body Style:</strong> Is the body style of the car
+          </li>
+          <li class="list__item">
+            <strong>Wheel Base:</strong> Is the wheel base of the car
+          </li>
+          <li class="list__item">
+            <strong>Engine Size:</strong> Is the engine size of the car
+          </li>
+          <li class="list__item"><strong>Age:</strong> Your age</li>
+          <li class="list__item">
+            <strong>Horsepower:</strong> Is the horsepower of the car
+          </li>
+          <li class="list__item">
+            <strong>Peark rpm:</strong> Is the revolution pear minutes of the car
+          </li>
+          <li class="list__item">
+            <strong>Highway mpg </strong> Is the highway miles per gallon
+          </li class="list__item">
+          <li class="list__item"><strong>Price:</strong> Put the real price of your car</li>
+        </ul>
+      </section>
+
+      <section class="contentForm">
+        <form action="" method="post" id="covidForm">
+          <div class="wrapper">
+            <label for="edad">Edad</label>
+            <input
+              type="text"
+              name="edad"
+              id="edad"
+              value=""
+              required
+            />
+          </div>
+          <div class="wrapper">
+            <label for="sexo">Sexo</label>
+            <select name="sexo" id="sexo" required>
+              <option value="" hidden></option>
+              <option value="F">Femenino</option>
+              <option value="M">Masculino</option>
+            </select>
+          </div>
+          <div class="wrapper">
+            <label for="make">¿Tienes Covid?</label>
+            <select name="positividad_actual" id="positividad_actual" required>
+              <option value="" hidden></option>
+              <option value="">Si</option>
+              <option value="">No</option>
+            </select>
+          </div>
+          <div class="wrapper">
+            <label for="cantidad_vacunas">Cantidad de Vacunas</label>
+            <input
+              type="text"
+              name="cantidad_vacunas"
+              id="cantidad_vacunas"
+              value=""
+              required
+            />
+          </div>
+          <div class="wrapper">
+            <label for="fecha_dosis1">Fecha Dosis 1</label>
+            <input type="date" name="fecha_dosis1" id="fecha_dosis1" required>
+          </div>
+          <div class="wrapper">
+            <label for="fabricante_dosis1">Fabricante Dosis 1</label>
+            <select name="fabricante_dosis1" id="fabricante_dosis1" required>
+              <option value="" hidden></option>
+              <option value="PFIZER">PFIZER</option>
+              <option value="ASTRAZENECA">ASTRAZENECA</option>
+              <option value="SINOPHARM">SINOPHARM</option>
+            </select>
+          </div>
+          <div class="wrapper">
+            <label for="fecha_dosis2">Fecha Dosis 2</label>
+            <input type="date" name="fecha_dosis2" id="fecha_dosis2" required>
+          </div>
+          <div class="wrapper">
+            <label for="fabricante_dosis2">Fabricante Dosis 2</label>
+            <select name="fabricante_dosis2" id="fabricante_dosis2" required>
+              <option value="" hidden></option>
+              <option value="PFIZER">PFIZER</option>
+              <option value="ASTRAZENECA">ASTRAZENECA</option>
+              <option value="SINOPHARM">SINOPHARM</option>
+            </select>
+          </div>
+          <div class="wrapper">
+            <label for="fecha_dosis3">Fecha Dosis 3</label>
+            <input type="date" name="fecha_dosis3" id="fecha_dosis3" required>
+          </div>
+          <div class="wrapper">
+            <label for="fecha_dosis3">Fecha Dosis 3</label>
+            <select name="fecha_dosis3" id="fecha_dosis3" required>
+              <option value="" hidden></option>
+              <option value="PFIZER">PFIZER</option>
+              <option value="ASTRAZENECA">ASTRAZENECA</option>
+              <option value="SINOPHARM">SINOPHARM</option>
+            </select>
+          </div>
+          <div class="wrapper">
+            <label for="departamento">Departamento</label>
+            <select name="departamento" id="departamento" required>
+            </select>
+          </div>
+          <div class="wrapper">
+            <label for="provincia">Provincia</label>
+            <select name="provincia" id="provincia" required>
+            </select>
+          </div>
+          <div class="wrapper">
+            <label for="distrito">Distrito</label>
+            <select name="distrito" id="distrito" required>
+            </select>
+          </div>
+          <div class="wrapper-btn">
+            <input type="submit" value="Evaluate" required />
+          </div>
+        </form>
+      </section>
+
+      <section id="results">
+        <span id="btnCloseModal"><i class='bx bx-exit'></i></span>
+
+        <p class="image">
+          <img
+            src="../images/car.png"
+            alt="precio del automovil"
+            id="imageState"
+            width=""
+          />
+        </p>
+
+        <p class="paragraph paragraph--result" id="paragraphResult"></p>
+
+        <div class="contentTableCars">
+          <table>
+            <thead>
+              <tr>
+                <th>Make</th>
+                <th>Body style</th>
+                <th>wheel base</th>
+                <th>Engine size</th>
+                <th>Horsepower</th>
+                <th>Peak rpm</th>
+                <th>Highway mpg</th>
+                <th>Price</th>
+                <th>Scored Labels</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="tr-cars"></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="socialMedia">
+        <button class="btn">
+          <i class='bx bxl-youtube'></i> 
+          <a href="https://www.youtube.com/channel/UCKmXlegNzxRIhWz1vP1YuZw" target="_blank">Youtube</a>
+        </button>
+        <button class="btn">
+          <i class='bx bxl-discord-alt' ></i> 
+          <a href="https://discord.gg/CrKTjZSe" target="_blank">Discord</a>
+        </button>
+        <button class="btn">
+          <i class='bx bxl-blogger' ></i> 
+          <a href="https://estivenmayhuay.github.io/emcody/" target="_blank">Blog</a>
+        </button>
+      </section>
+    </main>
+
+    <script src="../script/app.js" type="module"></script>
+  </body>
+</html>
