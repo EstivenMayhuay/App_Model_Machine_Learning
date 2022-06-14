@@ -26,7 +26,7 @@ d.addEventListener("DOMContentLoaded", () => {
     "La Libertad",
     "Lambayeque",
     "Lima Metropolitana",
-    "Lima (departamento)",
+    "Lima",
     "Loreto",
     "Madre de Dios",
     "Moquegua",
@@ -41,16 +41,18 @@ d.addEventListener("DOMContentLoaded", () => {
 
   $selectDepartamento.innerHTML = departamentos.map((dep) => {
     if (dep == "") return '<option value="" hidden></option>';
-
-    return `<option value=${dep.toUpperCase()}>${dep}</option>`;
+    return `<option value="${dep.toUpperCase()}">${dep}</option>`;
   });
 
   $selectProvincia.disabled = true;
   $selectDistrito.disabled = true;
 
   $selectDepartamento.addEventListener("change", (e) => {
-    departamentoNombre = e.target.value.toLowerCase();
-    let url = `http://localhost:3000/peru/departamento/${departamentoNombre}`;
+    departamentoNombre = e.target.value;
+    let url = `http://localhost:3000/peru/departamento/${departamentoNombre
+      .toLowerCase()
+      .split(" ")
+      .join("&")}`;
 
     fetch(url, {
       method: "GET",
@@ -76,8 +78,6 @@ d.addEventListener("DOMContentLoaded", () => {
       .toLowerCase()
       .split(" ")
       .join("&")}`;
-
-    console.log(url);
 
     fetch(url, {
       method: "POST",
