@@ -68,7 +68,9 @@ d.addEventListener("DOMContentLoaded", () => {
         $selectProvincia.disabled = false;
         $selectProvincia.innerHTML = provincias.map((pro) => {
           if (pro.nombre == "") return '<option value="" hidden></option>';
-          return `<option value="${pro.nombre}">${pro.nombre}</option>`;
+          return `<option value="${pro.nombre.toUpperCase()}">${
+            pro.nombre
+          }</option>`;
         });
       });
   });
@@ -96,7 +98,9 @@ d.addEventListener("DOMContentLoaded", () => {
         $selectDistrito.disabled = false;
         $selectDistrito.innerHTML = distritos.map((dis) => {
           if (dis.nombre == "") return '<option value="" hidden></option>';
-          return `<option value="${dis.nombre}">${dis.nombre}</option>`;
+          return `<option value="${dis.nombre.toUpperCase()}">${
+            dis.nombre
+          }</option>`;
         });
       });
   });
