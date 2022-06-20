@@ -469,10 +469,12 @@ td {
 @media screen and (min-width: 1024px) {
   /* Header */
   .main {
+    outline: 2px solid green;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
     align-items: center;
     padding: 2em;
+    min-height: 100vh;
   }
 
   .intro {
