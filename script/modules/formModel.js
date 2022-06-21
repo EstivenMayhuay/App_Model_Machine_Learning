@@ -75,7 +75,22 @@ const formCars = (elem) => {
 };
 
 const formCovid = (elem) => {
-  console.log(elem);
+  const formData = new FormData(elem);
+  const data = Object.fromEntries(formData);
+
+  // Fetching the data of the form with the method POST
+  fetch("http://localhost:3000/covid", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      // renderDataSurvived(data, "#tr-cars", "cars");
+    });
 };
 
 export { formTitanic, formCars, formCovid };

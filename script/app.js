@@ -3,9 +3,9 @@ import { formCars, formCovid, formTitanic } from "./modules/formModel.js";
 const d = document;
 
 d.addEventListener("DOMContentLoaded", () => {
-  const $selectDepartamento = d.getElementById("departamento");
-  const $selectProvincia = d.getElementById("provincia");
-  const $selectDistrito = d.getElementById("distrito");
+  const $selectDepartamento = d.getElementById("dep_domicilio");
+  const $selectProvincia = d.getElementById("prov_domicilio");
+  const $selectDistrito = d.getElementById("dist_domicilio");
 
   let departamentoNombre = "";
 
@@ -106,13 +106,12 @@ d.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Send the dato to the API Machine Learning
+// Send the data to the API Machine Learning
 d.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(e.target.id);
   if (e.target.id === "titanicForm") formTitanic(e.target);
   else if (e.target.id === "carsForm") formCars(e.target);
-  else if (e.target.id === "covidForm") formCovid(e.targt);
+  else if (e.target.id === "covidForm") formCovid(e.target);
 });
 
 // Close the Modal
