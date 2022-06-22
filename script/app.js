@@ -49,7 +49,7 @@ d.addEventListener("DOMContentLoaded", () => {
 
   $selectDepartamento.addEventListener("change", (e) => {
     departamentoNombre = e.target.value;
-    let url = `http://localhost:3000/peru/departamento/${departamentoNombre
+    let url = `https://emcodyapiml.herokuapp.com/peru/departamento/${departamentoNombre
       .toLowerCase()
       .split(" ")
       .join("&")}`;
@@ -76,7 +76,7 @@ d.addEventListener("DOMContentLoaded", () => {
   });
 
   $selectProvincia.addEventListener("change", (e) => {
-    let url = `http://localhost:3000/peru/provincia/${e.target.value
+    let url = `https://emcodyapiml.herokuapp.com/peru/provincia/${e.target.value
       .toLowerCase()
       .split(" ")
       .join("&")}`;

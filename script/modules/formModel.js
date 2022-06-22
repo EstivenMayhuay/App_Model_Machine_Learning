@@ -79,7 +79,7 @@ const formCovid = (elem) => {
   const data = Object.fromEntries(formData);
 
   // Fetching the data of the form with the method POST
-  fetch("http://localhost:3000/covid", {
+  fetch("https://emcodyapiml.herokuapp.com/covid", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
