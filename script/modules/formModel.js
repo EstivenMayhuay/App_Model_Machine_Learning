@@ -89,7 +89,34 @@ const formCovid = (elem) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      // renderDataSurvived(data, "#tr-cars", "cars");
+      const $contentModal = document.querySelector(".contentModal");
+      const $modalCovid = document.getElementById("modal-covid");
+
+      $contentModal.style.display = "flex";
+      $modalCovid.style.transform = "scale(1)";
+
+      $modalCovid.innerHTML = `
+        <button id="btnCloseModalCovid">x</button>
+        <h3>Hola! ${data.nombre}</h3>
+        <p>Los resultados de la prediccion es la siguiente tienes ${
+          data.edad
+        } anos, cuentas con ${
+        data.cantidad_vacuna
+      } vacuna(as). Por lo tanto, teniendo en cuenta la cantidad y marca de vacunas, asi como la edad y el lugar de residencia, podemos decir que tienes una <strong>probabilidad del ${Number.parseFloat(
+        data.scoreProbability
+      ).toFixed(
+        2
+      )}</strong> de poder contagiarte de la covid-19, encontrandote en el distrito de ${data.distrito.toLowerCase()}.</p>
+      `;
+
+      let $btnCloseModalCovid = document.querySelector("#btnCloseModalCovid");
+
+      console.log($btnCloseModalCovid);
+
+      $btnCloseModalCovid.addEventListener("click", () => {
+        $modalCovid.style.transform = "scale(0)";
+        $contentModal.style.display = "none";
+      });
     });
 };
 
