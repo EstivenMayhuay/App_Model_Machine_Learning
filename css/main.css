@@ -412,12 +412,31 @@ td {
 
 .modal {
   position: relative;
-  width: 280px;
-  height: 320px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  row-gap: 1em;
+  width: 290px;
+  height: auto;
   background: var(--white);
   padding: 3em 1em 1em 1em;
   transform: scale(0);
   transition: transform 0.4s ease;
+}
+
+.modal button {
+  cursor: pointer;
+}
+
+.modal h3 {
+  font-family: var(--fontTitle);
+  color: var(--black);
+  text-align: center;
+}
+
+.modal p {
+  font-family: var(--fontText);
+  color: var(--black);
 }
 
 #btnCloseModalCovid {
