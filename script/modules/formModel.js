@@ -100,13 +100,15 @@ const formCovid = (elem) => {
         <h3>Hola! ${data.nombre}</h3>
         <p>Los resultados de la prediccion es la siguiente tienes ${
           data.edad
-        } anos, cuentas con ${
+        } años, cuentas con ${
         data.cantidad_vacuna
       } vacuna(as). Por lo tanto, teniendo en cuenta la cantidad y marca de vacunas, asi como la edad y el lugar de residencia, podemos decir que tienes una <strong>probabilidad del ${Number.parseFloat(
         data.scoreProbability
       ).toFixed(
         2
-      )}</strong> de poder contagiarte de la covid-19, encontrandote en el distrito de ${data.distrito.toLowerCase()}.</p>
+      )}</strong> de poder contagiarte de la covid-19, encontrandote en el distrito de ${data.distrito.toLowerCase()}. <strong>Lo cual representa un ${Number.parseFloat(
+        data.scoreProbability * 100
+      ).toFixed(2)} % de poder contagiarte. </strong> </p>
       `;
 
       let $btnCloseModalCovid = document.querySelector("#btnCloseModalCovid");
